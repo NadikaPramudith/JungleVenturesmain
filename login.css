@@ -1,0 +1,258 @@
+
+
+:root {
+  --primary-color: #082e3e;
+  --secondary-color: #e9c675;
+  --text-light: #cbd5e1;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Playfair Display", serif;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-image: url(./img/loginbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.signup-box {
+  width: 360px;
+  height: auto;
+  margin: auto;
+  background-color: white;
+  border-radius: 3px;
+  margin: 100px auto;
+}
+
+.login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+.container{
+  width: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0 10px 0;
+  border-radius: 20px;
+  background-color: #095c2e;
+  box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.776);
+  opacity: 0.9;
+
+}
+.top-header{
+  color: var(--white);
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 10px 0;
+
+}
+.input-field{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.input{
+  margin: 20px;
+  font-size: 20px;
+ height: 45px; 
+ width: 87%;
+ border: none;
+ outline: none;
+ border-radius: 30px;
+ color: var(--primary-color);
+ padding: 0 0 0 42px;
+ background: var(--text-light);
+}
+i{
+  position: relative;
+  top: -51px;
+  left: 28px;
+  color: black;
+}
+::-webkit-input-placeholder{
+  color: black;
+}
+.submit{
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+  height: 45px;
+  outline: none;
+  width: 50%;
+  margin-left: 20%;
+  margin-top: 20px;
+  background: var(--text-light);
+  cursor: pointer;
+  transition: .3s;
+}
+.submit:hover{
+  box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.776);
+}
+
+h1 {
+  text-align: center;
+  padding-top: 15px;
+  color: whitesmoke;
+}
+
+h4 {
+  text-align: center;
+  color: whitesmoke;
+}
+
+form {
+  width: 300px;
+  margin-left: 20px;
+}
+
+form label {
+  display: flex;
+  color: whitesmoke;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+form input {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 6px;
+  outline: none;
+}
+input[type="button"] {
+  width: 320px;
+  height: 35px;
+  margin-top: 20px;
+  border: none;
+  background-color: #49c1a2;
+  color: white;
+  font-size: 18px;
+}
+p {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 15px;
+  color: whitesmoke;
+}
+.para-2 {
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  margin-top: -10px;
+}
+.para-2 a {
+  color: #49c1a2;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px;
+  color: whitesmoke;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-links li {
+  margin: 0 30px;
+}
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+ul {
+  list-style: none;
+}
+.active {
+  color: green;
+  text-decoration: underline;
+  font-weight: bold;
+}
+body , html {
+  overflow-x: hidden;
+}
+.ctn {
+  padding: 8px 15px;
+  background: green;
+  border-radius: 30px;
+  color: whitesmoke;
+}
+.menu-btn,.close-btn{
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+@media only screen and (max-width:850px){
+  .menu-btn {
+      display: block;
+  }
+  .navbar {
+      padding: 0;
+  }
+  .logo {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+  }
+  .nav-links {
+      flex-direction: column;
+      width: 100%;
+      height: 100vh;
+      justify-content: center;
+      background: #00300c;
+      margin-top: -900px;
+      transition: all 0.5s ease;
+  }
+  .mobile-menu {
+      margin-top: 0px;
+      border-bottom-right-radius: 30%;
+  }
+  .nav-links li {
+      margin: 30px auto;
+  }
+
+  .footer {
+      padding: 10px;
+  }
+}
+
+.ctn:hover {
+  background: whitesmoke;
+  color: green;
+  box-shadow: 2px 2px 5px #00000056;
+}
+li:hover {
+  color: green;
+  cursor: pointer;
+}
+
+.footer {
+  width: 100%;
+  min-height: 100px;
+  padding: 20px 80px;
+  margin: 0;
+  background: #00300c;
+  text-align: center;
+}
+.footer p {
+  color: whitesmoke;
+  margin: 20px auto;
+}

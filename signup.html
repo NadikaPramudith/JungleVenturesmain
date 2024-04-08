@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="login.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1 class="logo">Jungle Ventures</h1>
+        <ul class="nav-links">
+            <li class="active"><a href="home.html">Home</a></li>
+            <li><a href="introduction.html">Introduction</a></li>
+            <li><a href="D.O.W.C.html">D.O.W.C</a></li>
+            <li><a href="animals.html">Animals</a></li>
+            <li><a href="leopard.html">Sri lankan Leopard</a></li>
+            <li><a href="yala.html">Yala National Park</a></li>
+            <li><a href="wilpattu.html">Wilpattu National Park</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+        <div class="mobile-nav">
+            <img src="img/menu-btn.png" alt="" class="menu-btn">
+            <h1 class="close-btn">X</h1>
+        </div>
+    </nav>
+    <div class="signup-box">
+        <div class="container">
+            <div class="top-header">
+             </div>
+             <h1>Sign Up</h1>
+        <h4>It's free and only takes a minute</h4>
+        <div x-data="{ users: [], firstName: '', lastName: '', email: '', password: '', confirmPassword: '', subscribeToNewsletter: false}">
+        <form @submit.prevent="registerUser">
+
+            <div class="input-field">
+
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" x-model="firstName" required>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" x-model="lastName" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" x-model="email" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" x-model="password" required>
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" x-model="confirmPassword" required>
+            <label for="subscribeToNewsletter">Subscribe to Newsletter</label>
+            <input type="checkbox" id="subscribeToNewsletter" x-model="subscribeToNewsletter">
+            <button type="submit" class="submit">Register</button>
+
+            <div class="input-field">
+
+        </form>
+        </div>
+        <p>
+            By clicking the Sign Up button, you agree to our <br />
+            <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
+        </p>
+    </div>
+    <p class="para-2">
+        Already have an account? <a href="login.html">Login here</a>
+    </p>
+        </div>
+        
+
+    <script>
+
+const mobileNav = document.querySelector('.mobile-nav')
+        const menuBtn = document.querySelector('.menu-btn')
+        const navlinks = document.querySelector('.nav-links')
+        const closeBtn = document.querySelector('.close-btn')
+
+        mobileNav.addEventListener('click', (e) => {
+            navlinks.classList.toggle('mobile-menu')
+            if (e.target === menuBtn) {
+                menuBtn.replaceWith(closeBtn)
+                closeBtn.style.display = 'block'
+            }
+            if (e.target === closeBtn) {
+                closeBtn.replaceWith(menuBtn)
+            }
+        })
+        function registerUser() {
+            const firstName = this.firstName.trim();
+            const lastName = this.lastName.trim();
+            const email = this.email.trim();
+            const password = this.password.trim();
+            const confirmPassword = this.confirmPassword.trim();
+            const subscribeToNewsletter = this.subscribeToNewsletter;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return;
+            }
+
+            const fullName = firstName + ' ' + lastName;
+
+            const newUser = {
+                fullName: fullName,
+                email: email,
+                password: password,
+                subscribeToNewsletter: subscribeToNewsletter
+            };
+
+            // Retrieve existing users from local storage
+            const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Add the new user to the array
+            storedUsers.push(newUser);
+
+            // Store the updated array back to local storage
+            localStorage.setItem('users', JSON.stringify(storedUsers));
+
+            alert("User registered successfully!");
+
+            window.location.href = 'login.html';
+        }
+
+        Alpine.data('registerUser', registerUser);
+    </script>
+</body>
+
+</html>
